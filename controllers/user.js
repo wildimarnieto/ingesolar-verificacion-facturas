@@ -44,15 +44,9 @@ const ususarioPut = async(req, res = response) => {
 }
 
 const usuarioPost = async(req, res = response) => {
-
-
-
-
+    
     const { nombre, correo, password, rol } = req.body;
     const usuario = new Usuario({ nombre, correo, password, rol });
-    //verificar si el correo existe
-
-
     //encriptar la contraseña
     const salt = bcryptjs.genSaltSync();
     usuario.password = bcryptjs.hashSync(password, salt);
@@ -61,11 +55,7 @@ const usuarioPost = async(req, res = response) => {
     await usuario.save();
 
     res.json({
-
-        ok: true,
-        msg: 'post API- controlador',
         usuario
-
     })
 }
 

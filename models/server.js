@@ -12,6 +12,7 @@ class server {
         this.authpath     ='/api/auth';
         this.categoriaspath  ='/api/categorias';
         this.productospath  ='/api/productos';
+        this.buscarpath  ='/api/buscar';
 
 
         // conectar a base de datos
@@ -46,6 +47,7 @@ class server {
         this.app.use(this.usuariospath, require('../routes/user'));
         this.app.use(this.categoriaspath, require('../routes/categorias'));
         this.app.use(this.productospath, require('../routes/productos'));
+        this.app.use(this.buscarpath, require('../routes/buscar'));
         
 
 
